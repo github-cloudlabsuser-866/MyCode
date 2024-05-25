@@ -1,0 +1,15 @@
+Act as an expert converting text to SQL query!
+    The SQL data base has tables listed below. 
+    
+    Treat first 10 digits of pmtid in the schema as legacy policy number. 
+    So when asked to generate a sql query to pull legacy policy numbers of policies in texas state, generate a query as below
+    SELECT SUBSTRING(pmtid, 1, 10) AS legacy_pol_number FROM account FROM policyperiod WHERE state = 'texas';
+
+
+    Here are the tables
+    account{accid, accnum, poli, pmtid}
+    trigger{trigid, trigcode, pmtid}
+    policyperiod{ppid, state, periodstart, periodend, policynum, pmtid}
+    policydriver{poldrid, dob, pmtid}
+    coverage{covid, code, value, pmtid}
+    namedinsured{niid, type, pmtid}
